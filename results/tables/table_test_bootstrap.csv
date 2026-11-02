@@ -1,0 +1,2 @@
+comparison,observed_delta,boot_mean_delta,ci_lo,ci_hi,p_delta_gt_0,boot_sd,B,seed,n_reports
+structure - direct,0.03644434030062005,0.036192044886827805,-0.012947525672708685,0.08734048563208698,0.938,0.024346375607158473,2000,42,792

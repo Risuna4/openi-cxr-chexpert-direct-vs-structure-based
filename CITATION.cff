@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code or the saved predictions, please cite this repository and the accompanying report."
+title: "Evaluating a Small Open-Weight Large Language Model for Structured Information Extraction from Chest X-Ray Reports: A Comparison of Direct and Structure-Based Pipelines"
+type: software
+authors:
+  - family-names: "Ntimana"
+    given-names: "Risuna"
+    affiliation: "University of the Witwatersrand, Johannesburg"
+license: MIT
+keywords:
+  - chest X-ray
+  - radiology report labelling
+  - CheXpert
+  - Llama-3.2
+  - low-rank adaptation
+  - structured output
+abstract: >-
+  Evaluation of meta-llama/Llama-3.2-3B-Instruct on extracting 14 CheXpert
+  observations from OpenI chest X-ray reports, comparing a direct pipeline
+  that returns one label per line with a structure-based pipeline that returns
+  a six-section anatomical JSON object, under zero-shot, 5-shot, and LoRA
+  fine-tuned conditions.

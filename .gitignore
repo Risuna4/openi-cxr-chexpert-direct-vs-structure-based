@@ -1,0 +1,25 @@
+# Model weights and training artefacts (reproducible, not source)
+adapter/
+*/adapter/
+outputs/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.zip
+
+# Derived SFT data (rebuilt by 05_sft_data.ipynb); raw prediction JSONL is kept
+sft_*.jsonl
+lora_model*/
+
+# Notebook and Python scratch
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Secrets and local config
+.env
+.env.*
+*.token

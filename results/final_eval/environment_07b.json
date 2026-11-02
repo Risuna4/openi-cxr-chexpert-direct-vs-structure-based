@@ -1,0 +1,167 @@
+{
+ "recorded_utc": "2026-10-25T11:10:51+00:00",
+ "gpu": "Tesla T4",
+ "versions": {
+  "transformers": "5.20.1",
+  "torch": "2.11.0+cu130",
+  "bitsandbytes": "0.50.2",
+  "peft": "0.21.2"
+ },
+ "model": "meta-llama/Llama-3.2-3B-Instruct",
+ "quantization": {
+  "load_in_4bit": true,
+  "bnb_4bit_quant_type": "nf4",
+  "bnb_4bit_compute_dtype": "float16"
+ },
+ "decoding": {
+  "do_sample": false,
+  "repetition_penalty": 1.1,
+  "max_new_tokens": {
+   "direct": 200,
+   "structure": 300
+  },
+  "batch_size": 1
+ },
+ "selected": {
+  "direct": {
+   "config": "direct_r16_a32_lr0.0002_ep2_s42",
+   "r": 16,
+   "alpha": 32,
+   "lr": 0.0002,
+   "epochs": 2,
+   "seed": 42,
+   "val_macro13": 0.8449131927140747,
+   "val_macro14": 0.8534314918850333,
+   "val_NoFinding": 0.9641693811074918,
+   "val_valid14": 1.0,
+   "adapter_dir": "/content/drive/MyDrive/cxr_eval_data/lora_search/direct/direct_r16_a32_lr0.0002_ep2_s42/adapter",
+   "selected_utc": "2026-10-24T13:52:45+00:00",
+   "selection_rule": "highest val macro13; ties: lower rank, fewer epochs, lower alpha"
+  },
+  "structure": {
+   "config": "structure_r32_a32_lr0.0002_ep2_s42",
+   "r": 32,
+   "alpha": 32,
+   "lr": 0.0002,
+   "epochs": 2,
+   "seed": 42,
+   "val_macro13": 0.8754573030261704,
+   "val_macro14": 0.880803964167602,
+   "val_NoFinding": 0.9503105590062112,
+   "val_valid14": 0.9974683544303796,
+   "adapter_dir": "/content/drive/MyDrive/cxr_eval_data/lora_search/structure/structure_r32_a32_lr0.0002_ep2_s42/adapter",
+   "selected_utc": "2026-10-24T13:52:45+00:00",
+   "selection_rule": "highest val macro13; ties: lower rank, fewer epochs, lower alpha"
+  }
+ },
+ "adapters": {
+  "direct": {
+   "peft_type": "LORA",
+   "r": 16,
+   "lora_alpha": 32,
+   "lora_dropout": 0,
+   "target_modules": [
+    "o_proj",
+    "gate_proj",
+    "v_proj",
+    "up_proj",
+    "q_proj",
+    "down_proj",
+    "k_proj"
+   ],
+   "bias": "none",
+   "base_model_name_or_path": "unsloth/llama-3.2-3b-instruct-unsloth-bnb-4bit"
+  },
+  "structure": {
+   "peft_type": "LORA",
+   "r": 32,
+   "lora_alpha": 32,
+   "lora_dropout": 0,
+   "target_modules": [
+    "v_proj",
+    "up_proj",
+    "gate_proj",
+    "o_proj",
+    "q_proj",
+    "down_proj",
+    "k_proj"
+   ],
+   "bias": "none",
+   "base_model_name_or_path": "unsloth/llama-3.2-3b-instruct-unsloth-bnb-4bit"
+  }
+ },
+ "files": {
+  "val_sanity.csv": [
+   {
+    "macro13": 0.8432458944950524,
+    "macro14": 0.8518998516381474,
+    "NoFinding": 0.964401294498382,
+    "pipeline": "direct",
+    "split": "val",
+    "n": 395,
+    "valid14": 1.0,
+    "usable_any": 1.0,
+    "generated_now": 0,
+    "already_done": 395,
+    "minutes": 0.0083704630533854,
+    "results_csv": "/content/drive/MyDrive/cxr_eval_data/final_eval/direct/val_predictions.csv",
+    "raw_jsonl": "/content/drive/MyDrive/cxr_eval_data/final_eval/direct/val_raw.jsonl",
+    "recorded_utc": "2026-10-25T10:26:19+00:00",
+    "search_val_macro13": 0.8449131927140747,
+    "delta_vs_search": -0.0016672982190223
+   },
+   {
+    "macro13": 0.8802571917949906,
+    "macro14": 0.8854724658123043,
+    "NoFinding": 0.9532710280373832,
+    "pipeline": "structure",
+    "split": "val",
+    "n": 395,
+    "valid14": 0.9974683544303796,
+    "usable_any": 1.0,
+    "generated_now": 0,
+    "already_done": 395,
+    "minutes": 0.0077372352282206,
+    "results_csv": "/content/drive/MyDrive/cxr_eval_data/final_eval/structure/val_predictions.csv",
+    "raw_jsonl": "/content/drive/MyDrive/cxr_eval_data/final_eval/structure/val_raw.jsonl",
+    "recorded_utc": "2026-10-25T10:26:52+00:00",
+    "search_val_macro13": 0.8754573030261704,
+    "delta_vs_search": 0.0047998887688202
+   }
+  ],
+  "test_metrics.csv": [
+   {
+    "macro13": 0.8460906236367575,
+    "macro14": 0.8528824698475775,
+    "NoFinding": 0.9411764705882352,
+    "pipeline": "direct",
+    "split": "test",
+    "n": 792,
+    "valid14": 0.9987373737373736,
+    "usable_any": 1.0,
+    "generated_now": 0,
+    "already_done": 792,
+    "minutes": 0.0106374104817708,
+    "results_csv": "/content/drive/MyDrive/cxr_eval_data/final_eval/direct/test_predictions.csv",
+    "raw_jsonl": "/content/drive/MyDrive/cxr_eval_data/final_eval/direct/test_raw.jsonl",
+    "recorded_utc": "2026-10-25T10:27:22+00:00"
+   },
+   {
+    "macro13": 0.8825349639373775,
+    "macro14": 0.8864343056920643,
+    "NoFinding": 0.937125748502994,
+    "pipeline": "structure",
+    "split": "test",
+    "n": 792,
+    "valid14": 1.0,
+    "usable_any": 1.0,
+    "generated_now": 160,
+    "already_done": 632,
+    "minutes": 40.700947868824,
+    "results_csv": "/content/drive/MyDrive/cxr_eval_data/final_eval/structure/test_predictions.csv",
+    "raw_jsonl": "/content/drive/MyDrive/cxr_eval_data/final_eval/structure/test_raw.jsonl",
+    "recorded_utc": "2026-10-25T11:08:12+00:00"
+   }
+  ]
+ }
+}

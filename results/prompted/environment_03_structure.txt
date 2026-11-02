@@ -1,0 +1,5 @@
+Session recorded at: 2026-10-22 18:29:26.469933
+GPU: Tesla T4
+transformers: 5.20.1
+torch: 2.11.0+cu128
+bitsandbytes: 0.50.2

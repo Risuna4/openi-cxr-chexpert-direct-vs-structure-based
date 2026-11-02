@@ -1,0 +1,14 @@
+# Final recorded-session evaluation (07b_final_eval.ipynb): frozen base model
+# plus the selected adapters, scored once on validation and once on test.
+# Environment recorded on Colab (Tesla T4), Python 3.13, in final_eval/environment_07b.json.
+#
+# The notebook asserts these versions before running:
+#   transformers  5.20.1
+#   bitsandbytes  0.50.2
+#   torch         2.11.0
+transformers==5.20.1
+torch==2.11.0
+accelerate
+bitsandbytes==0.50.2
+peft==0.21.2
+huggingface_hub

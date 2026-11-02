@@ -1,0 +1,10 @@
+{
+ "direct": {
+  "prefix": "You are a radiologist assistant. For each of the 14 findings below, provide a single label: 1 (Present), 0 (Absent), -1 (Uncertain), or NaN (Not Mentioned).\n\nYou must output exactly 14 lines, one for each finding. Even if a finding is not mentioned in the report, you must still output its line with the value NaN. Do not skip any line.\n\nOutput format (one finding per line):\nNo Finding=value\nEnlarged Cardiomediastinum=value\nCardiomegaly=value\nLung Lesion=value\nLung Opacity=value\nEdema=value\nConsolidation=value\nPneumonia=value\nAtelectasis=value\nPneumothorax=value\nPleural Effusion=value\nPleural Other=value\nFracture=value\nSupport Devices=value\n\nReport:\n",
+  "suffix": "\n\nOutput:"
+ },
+ "structure": {
+  "prefix": "You are a radiologist assistant. Analyze the chest X-ray report and output JSON only. Use: present, absent, uncertain, or not_mentioned for each finding.\n\nTemplate:\n{\"lungs_and_airways\":{\"lung_opacity\":\"\",\"consolidation\":\"\",\"edema\":\"\",\"atelectasis\":\"\",\"lung_lesion\":\"\",\"pneumonia\":\"\"},\"pleura\":{\"pleural_effusion\":\"\",\"pneumothorax\":\"\",\"pleural_other\":\"\"},\"cardiovascular\":{\"cardiomegaly\":\"\",\"enlarged_cardiomediastinum\":\"\"},\"bones_and_chest_wall\":{\"fracture\":\"\"},\"devices\":{\"support_devices\":\"\"},\"general\":{\"no_finding\":\"\"}}\n\nReport:\n",
+  "suffix": "\n\nJSON:"
+ }
+}

@@ -1,0 +1,4 @@
+# Post-hoc table reproduction (analysis/reproduce_tables.py).
+# CPU only: no GPU, no model, no network. Reads the CSVs in data/ and results/.
+pandas>=2.0
+numpy>=2.0

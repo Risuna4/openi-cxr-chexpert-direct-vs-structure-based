@@ -1,0 +1,11 @@
+# Prompted inference: zero-shot and 5-shot, both pipelines.
+# Environment recorded on Colab (Tesla T4), Python 3.13.
+# 02_direct_pipeline.ipynb and 03_structure_pipeline.ipynb were run in this
+# environment. 03 pins transformers==5.20.1; 02 inherits the same runtime.
+transformers==5.20.1
+torch==2.11.0
+accelerate==1.15.0
+bitsandbytes==0.50.2
+huggingface_hub==1.33.0
+pandas>=2.0
+numpy>=2.0

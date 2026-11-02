@@ -1,0 +1,23 @@
+# LoRA fine-tuning search (06_lora_search.ipynb) and seed stability (07a_stability.ipynb).
+# Environment recorded on Colab (Tesla T4), Python 3.13.
+#
+# The notebooks install Unsloth pinned and take the rest from its resolver:
+#   !pip install -q unsloth==2026.9.9
+#   !pip install -q --no-deps xformers trl peft accelerate bitsandbytes
+#
+# Versions printed at run time:
+#   unsloth       2026.9.9
+#   transformers  5.5.0
+#   torch         2.11.0+cu130
+#
+# transformers is pinned by the Unsloth wheel. Unsloth also installs an
+# `unsloth_zoo` companion package; keep both on the same versions.
+unsloth==2026.9.9
+transformers==5.5.0
+torch==2.11.0
+trl
+peft
+accelerate
+bitsandbytes
+datasets
+xformers

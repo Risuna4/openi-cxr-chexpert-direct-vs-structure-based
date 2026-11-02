@@ -1,0 +1,32 @@
+{
+ "direct": {
+  "config": "direct_r16_a32_lr0.0002_ep2_s42",
+  "r": 16,
+  "alpha": 32,
+  "lr": 0.0002,
+  "epochs": 2,
+  "seed": 42,
+  "val_macro13": 0.8449131927140747,
+  "val_macro14": 0.8534314918850333,
+  "val_NoFinding": 0.9641693811074918,
+  "val_valid14": 1.0,
+  "adapter_dir": "/content/drive/MyDrive/cxr_eval_data/lora_search/direct/direct_r16_a32_lr0.0002_ep2_s42/adapter",
+  "selected_utc": "2026-10-24T13:52:45+00:00",
+  "selection_rule": "highest val macro13; ties: lower rank, fewer epochs, lower alpha"
+ },
+ "structure": {
+  "config": "structure_r32_a32_lr0.0002_ep2_s42",
+  "r": 32,
+  "alpha": 32,
+  "lr": 0.0002,
+  "epochs": 2,
+  "seed": 42,
+  "val_macro13": 0.8754573030261704,
+  "val_macro14": 0.880803964167602,
+  "val_NoFinding": 0.9503105590062112,
+  "val_valid14": 0.9974683544303796,
+  "adapter_dir": "/content/drive/MyDrive/cxr_eval_data/lora_search/structure/structure_r32_a32_lr0.0002_ep2_s42/adapter",
+  "selected_utc": "2026-10-24T13:52:45+00:00",
+  "selection_rule": "highest val macro13; ties: lower rank, fewer epochs, lower alpha"
+ }
+}
